@@ -1,2 +1,3 @@
-# jcha1997.github.io
+# Jeremiah Cha
 Personal website 
+Redirect jcha1997.github.io to jeremiahcha.com
