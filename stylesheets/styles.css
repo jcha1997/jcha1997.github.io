@@ -269,3 +269,16 @@ footer {
     color:#444;
   }
 }
+
+.fab {
+  color: #a51c30;
+  font-size: 30px;
+  padding-right: 10px;
+}
+
+
+.fas {
+  color: #a51c30;
+  font-size: 30px;
+  padding-right: 10px;
+}
