@@ -272,13 +272,13 @@ footer {
 
 .fab {
   color: #a51c30;
-  font-size: 2em;
-  padding-right: 10px;
+  font-size: 2em!important;
+  padding-right: 10px!important;
 }
 
 
 .fas {
   color: #a51c30;
-  font-size: 2em;
-  padding-right: 10px;
+  font-size: 2em!important;
+  padding-right: 10px!important;
 }
