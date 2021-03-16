@@ -272,61 +272,61 @@ footer {
 mark_harvard {
   background-color: #A51C30!important;
   color: white!important;
-  box-shadow: 0 0 0 1px #A51C30!important;
+  box-shadow: 0 0 0 0.5px #A51C30!important;
 }
 
 mark_gold {
   background-color: #C69214;
   color: white;
-  box-shadow: 0 0 0 1px #C69214;
+  box-shadow: 0 0 0 0.5px #C69214;
 }
 
 mark_black {
   background-color: #000000;
   color: white;
-  box-shadow: 0 0 0 1px #000000;
+  box-shadow: 0 0 0 .5px #000000;
 }
 
 mark_purple {
   background-color: #552583;
   color: white;
-  box-shadow: 0 0 0 1px #552583;
+  box-shadow: 0 0 0 0.5px #552583;
 }
 
 mark_blue {
   background-color: #155084;
   color: white;
-  box-shadow: 0 0 0 1px #155084;
+  box-shadow: 0 0 0 0.5px #155084;
 }
 
 mark_yellow {
   background-color: #FFC107;
   color: white;
-  box-shadow: 0 0 0 1px #FFC107;
+  box-shadow: 0 0 0 0.5px #FFC107;
 }
 
 mark_green {
   background-color: #6E963B;
   color: white;
-  box-shadow: 0 0 0 1px #6E963B;
+  box-shadow: 0 0 0 0.5px #6E963B;
 }
 
 mark_orange {
   background-color: #fcb315;
   color: white;
-  box-shadow: 0 0 0 1px #fcb315;
+  box-shadow: 0 0 0 0.5px #fcb315;
 }
 
 mark_turq {
   background-color: #00aaad;
   color: white;
-  box_shadow: 0 0 0 1px #00aaad;
+  box_shadow: 0 0 0 0.5px #00aaad;
 }
 
 mark_red {
   background-color: #ed1b34;
   color: white;
-  box_shadow: 0 0 0 1px #ed1b34;
+  box_shadow: 0 0 0 0.5px #ed1b34;
 }
 
 .tab { margin-left: 40px; }
