@@ -13,6 +13,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p, ul, ol, table, pre, dl {
   margin:0 0 20px;
+  font-size: 16px;
 }
 
 h1, h2, h3 {
@@ -34,24 +35,10 @@ h3, h4, h5, h6 {
   font-weight: 500;
 }
 
-a {
-  color:#a51c30;
-  text-decoration:none;
-}
-
-a:hover {
-  color:#731321;
-}
-
-a small {
-  font-size:11px;
-  color:#777;
-  margin-top:-0.3em;
-  display:block;
-}
-
-a:hover small {
-  color:#777;
+a, a:link, a:visited, a:focus, a:hover, a:active {
+  color: #595959;
+  text-decoration-line: none;
+  border-bottom: 3px solid #595959;
 }
 
 .wrapper {
@@ -271,14 +258,76 @@ footer {
 }
 
 .fab {
-  color: #a51c30;
+  color: #3366BB;
   font-size: 2em!important;
   padding-right: 10px!important;
 }
 
 
 .fas {
-  color: #a51c30;
+  color: #3366BB;
   font-size: 2em!important;
   padding-right: 10px!important;
 }
+
+mark_harvard {
+  background-color: #A51C30;
+  color: white;
+  box-shadow: 0 0 0 1px #A51C30;
+}
+
+mark_gold {
+  background-color: #C69214;
+  color: white;
+  box-shadow: 0 0 0 1px #C69214;
+}
+
+mark_black {
+  background-color: #000000;
+  color: white;
+  box-shadow: 0 0 0 1px #000000;
+}
+
+mark_purple {
+  background-color: #552583;
+  color: white;
+  box-shadow: 0 0 0 1px #552583;
+}
+
+mark_blue {
+  background-color: #155084;
+  color: white;
+  box-shadow: 0 0 0 1px #155084;
+}
+
+mark_yellow {
+  background-color: #FFC107;
+  color: white;
+  box-shadow: 0 0 0 1px #FFC107;
+}
+
+mark_green {
+  background-color: #6E963B;
+  color: white;
+  box-shadow: 0 0 0 1px #6E963B;
+}
+
+mark_orange {
+  background-color: #fcb315;
+  color: white;
+  box-shadow: 0 0 0 1px #fcb315;
+}
+
+mark_turq {
+  background-color: #00aaad;
+  color: white;
+  box_shadow: 0 0 0 1px #00aaad;
+}
+
+mark_red {
+  background-color: #ed1b34;
+  color: white;
+  box_shadow: 0 0 0 1px #ed1b34;
+}
+
+.tab { margin-left: 40px; }
