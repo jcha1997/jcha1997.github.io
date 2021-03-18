@@ -329,4 +329,16 @@ mark_red {
   box_shadow: 0 0 0 0.5px #ed1b34;
 }
 
+mark_twitter {
+  background-color: #1DA1F2;
+  color: white;
+  box_shadow: 0 0 0 0.5px #1DA1F2;
+}
+
+mark_orange {
+  background-color: : #ffa500;
+  color: white;
+  box_shadow: 0 0 0 0.5px #ffa500;
+}
+
 .tab { margin-left: 40px; }
