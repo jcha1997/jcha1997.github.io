@@ -336,9 +336,15 @@ mark_twitter {
 }
 
 mark_orange {
-  background-color: : #ffa500;
+  background-color: #ffa500;
   color: white;
   box_shadow: 0 0 0 0.5px #ffa500;
+}
+
+mark_light_purple {
+  background-color: #d4b5ca;
+  color: white;
+  box_shadow: 0 0 0 0.5px #d4b5ca;
 }
 
 .tab { margin-left: 40px; }
