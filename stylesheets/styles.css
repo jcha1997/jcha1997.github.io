@@ -257,14 +257,14 @@ footer {
 }
 
 .fab {
-  color: #3366BB;
+  color: #000000;
   font-size: 2em!important;
   padding-right: 10px!important;
 }
 
 
 .fas {
-  color: #3366BB;
+  color: #000000;
   font-size: 2em!important;
   padding-right: 10px!important;
 }
@@ -345,6 +345,12 @@ mark_light_purple {
   background-color: #d4b5ca;
   color: white;
   box_shadow: 0 0 0 0.5px #d4b5ca;
+}
+
+mark_econ {
+  background-color: #00693e;
+  color: white;
+  box_shadow: 0 0 0 0.5px #00693e;
 }
 
 .tab { margin-left: 40px; }
