@@ -282,51 +282,51 @@ mark_gold {
 }
 
 mark_black {
-  background-color: #000000;
+  background-color: #2F323A;
   color: white;
-  box-shadow: 0 0 0 .5px #000000;
+  box-shadow: 0 0 0 .5px #2F323A;
 }
 
-mark_purple {
-  background-color: #552583;
+mark_laker {
+  background-color: #C47AC0;
   color: white;
-  box-shadow: 0 0 0 0.5px #552583;
+  box-shadow: 0 0 0 0.5px #C47AC0;
 }
 
 mark_blue {
-  background-color: #155084;
+  background-color: #258EA6 ;
   color: white;
-  box-shadow: 0 0 0 0.5px #155084;
+  box-shadow: 0 0 0 0.5px #258EA6;
 }
 
 mark_yellow {
-  background-color: #FFC107;
+  background-color: #E9C46A;
   color: white;
-  box-shadow: 0 0 0 0.5px #FFC107;
+  box-shadow: 0 0 0 0.5px #E9C46A;
 }
 
 mark_green {
-  background-color: #6E963B;
+  background-color: #2A9D8F;
   color: white;
-  box-shadow: 0 0 0 0.5px #6E963B;
+  box-shadow: 0 0 0 0.5px #2A9D8F;
 }
 
 mark_orange {
-  background-color: #fcb315;
+  background-color: #F4A261;
   color: white;
-  box-shadow: 0 0 0 0.5px #fcb315;
+  box-shadow: 0 0 0 0.5px #F4A261;
 }
 
 mark_turq {
-  background-color: #00aaad;
+  background-color: #009FB7;
   color: white;
-  box_shadow: 0 0 0 0.5px #00aaad;
+  box_shadow: 0 0 0 0.5px #009FB7;
 }
 
 mark_red {
-  background-color: #ed1b34;
+  background-color: #E76F51;
   color: white;
-  box_shadow: 0 0 0 0.5px #ed1b34;
+  box_shadow: 0 0 0 0.5px #E76F51;
 }
 
 mark_twitter {
@@ -335,22 +335,27 @@ mark_twitter {
   box_shadow: 0 0 0 0.5px #1DA1F2;
 }
 
-mark_orange {
-  background-color: #ffa500;
-  color: white;
-  box_shadow: 0 0 0 0.5px #ffa500;
-}
-
 mark_light_purple {
-  background-color: #d4b5ca;
+  background-color: #A7A5C6;
   color: white;
-  box_shadow: 0 0 0 0.5px #d4b5ca;
+  box_shadow: 0 0 0 0.5px #A7A5C6;
 }
 
-mark_econ {
-  background-color: #00693e;
+mark_charcoal {
+  background-color: #3A6EA5;
   color: white;
-  box_shadow: 0 0 0 0.5px #00693e;
+  box_shadow: 0 0 0 0.5px #3A6EA5;
 }
 
+mark_dodger {
+  background-color: #1e90ff;
+  color: white;
+  box_shadow: 0 0 0 0.5px #1e90ff;
+}
+
+mark_old_lavender {
+  background-color: #736372;
+  color: white;
+  box_shadow: 0 0 0 0.5px #736372;
+}
 .tab { margin-left: 40px; }
