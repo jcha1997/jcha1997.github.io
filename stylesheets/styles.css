@@ -20,7 +20,7 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size:28px;
+  font-size: 28px;
   font-weight: 500;
 }
 
@@ -34,10 +34,10 @@ h3, h4, h5, h6 {
   font-weight: 500;
 }
 
-a, a:link, a:visited, a:focus, a:hover, a:active {
+a, a:link, a:focus, a:hover, a:active, a:visited {
   color: #595959;
   text-decoration-line: none;
-  border-bottom: 3px solid #595959;
+  border-bottom: 2px solid #595959;
 }
 
 .wrapper {
