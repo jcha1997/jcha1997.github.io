@@ -35,9 +35,8 @@ h3, h4, h5, h6 {
 }
 
 a, a:link, a:focus, a:hover, a:active, a:visited {
-  color: #595959;
+  color: #A51C30;
   text-decoration-line: none;
-  border-bottom: 2px solid #595959;
 }
 
 .wrapper {
