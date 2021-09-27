@@ -319,43 +319,43 @@ mark_orange {
 mark_turq {
   background-color: #009FB7;
   color: white;
-  box_shadow: 0 0 0 0.5px #009FB7;
+  box-shadow: 0 0 0 0.5px #009FB7;
 }
 
 mark_red {
   background-color: #E76F51;
   color: white;
-  box_shadow: 0 0 0 0.5px #E76F51;
+  box-shadow: 0 0 0 0.5px #E76F51;
 }
 
 mark_twitter {
   background-color: #1DA1F2;
   color: white;
-  box_shadow: 0 0 0 0.5px #1DA1F2;
+  box-shadow: 0 0 0 0.5px #1DA1F2;
 }
 
 mark_light_purple {
   background-color: #A7A5C6;
   color: white;
-  box_shadow: 0 0 0 0.5px #A7A5C6;
+  box-shadow: 0 0 0 0.5px #A7A5C6;
 }
 
 mark_charcoal {
   background-color: #3A6EA5;
   color: white;
-  box_shadow: 0 0 0 0.5px #3A6EA5;
+  box-shadow: 0 0 0 0.5px #3A6EA5;
 }
 
 mark_dodger {
   background-color: #1e90ff;
   color: white;
-  box_shadow: 0 0 0 0.5px #1e90ff;
+  box-shadow: 0 0 0 0.5px #1e90ff;
 }
 
 mark_old_lavender {
   background-color: #736372;
   color: white;
-  box_shadow: 0 0 0 0.5px #736372;
+  box-shadow: 0 0 0 0.5px #736372;
 }
 
 .tab { margin-left: 40px; }
