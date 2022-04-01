@@ -383,7 +383,7 @@ mark_old_lavender {
 /* Change the color of links on hover */
 .topnav a:hover {
   background-color: #A51C30;
-  color: black;
+  color: white;
 }
 
 /* Add a color to the active/current link */
