@@ -366,14 +366,14 @@ mark_old_lavender {
 
 /* Add a white background color to the top navigation */
 .topnav {
-  background-color: #A51C30;
+  background-color: #fff;
   overflow: hidden;
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
   float: right;
-  color: #fff;
+  color: #000000;
   text-align: center;
   padding: 8px 16px;
   text-decoration: none;
@@ -382,12 +382,12 @@ mark_old_lavender {
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #fff;
+  background-color: #A51C30;
   color: black;
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: #fff;
-  color: black;
+  background-color: #A51C30;
+  color: white;
 }
