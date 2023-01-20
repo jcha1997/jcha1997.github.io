@@ -39,9 +39,14 @@ h3, h4, h5, h6 {
   font-weight: 500;
 }
 
-a, a:link, a:focus, a:hover, a:active, a:visited {
-  color: #A51C30;
+a, a:link, a:focus, a:active, a:visited {
+  color: #005A9C;
   text-decoration-line: none;
+}
+
+a:hover {
+  color: white !important;
+  background-color: #005A9C;
 }
 
 .wrapper {
@@ -382,12 +387,12 @@ mark_old_lavender {
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #A51C30;
+  background-color: #005A9C;
   color: white;
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: #A51C30;
+  background-color: #005A9C;
   color: white;
 }
