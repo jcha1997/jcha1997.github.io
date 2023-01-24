@@ -377,9 +377,8 @@ mark_old_lavender {
 
 /* Style the links inside the navigation bar */
 .topnav a {
-  float: right;
+  float: left;
   color: #000000;
-  text-align: center;
   padding: 8px 16px;
   text-decoration: none;
   font-size: 17px;
