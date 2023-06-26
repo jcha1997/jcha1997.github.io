@@ -270,6 +270,11 @@ footer {
   padding-right: 10px!important;
 }
 
+.fab:hover{
+  color: #005A9C;
+  padding-right: 10px!important;
+}
+
 
 .fas {
   color: #000000;
