@@ -40,12 +40,13 @@ h3, h4, h5, h6 {
 }
 
 a, a:link, a:focus, a:active, a:visited {
-  color: #005A9C;
+  color: #A51C30;
   text-decoration-line: none;
 }
 
 a:hover {
-  color: crimson !important;
+  background-color: #A51C30;
+  color: white !important;
 }
 
 .wrapper {
@@ -390,12 +391,12 @@ mark_old_lavender {
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #005A9C;
+  background-color: #A51C30;
   color: white;
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: #005A9C;
+  background-color: #A51C30;
   color: white;
 }
