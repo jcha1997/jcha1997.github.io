@@ -45,8 +45,7 @@ a, a:link, a:focus, a:active, a:visited {
 }
 
 a:hover {
-  background-color: #A51C30;
-  color: white !important;
+  color: #005A9C !important;
 }
 
 .wrapper {
