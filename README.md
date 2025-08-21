@@ -12,7 +12,7 @@ theme](https://github.com/orderedlist/minimal) created by Steve Smith.
 Content was inspired by [@emmaremy](https://github.com/emmaremy) and
 [@sonoshah](https://github.com/sonoshah). Design elements can be
 attributed to [Brad Bolman](http://brad.bolman.com/) and
-[Andrea](https://a-flair.com/portfolio).
+[Andrea](https://www.instagram.com/runon.studio/).
 
 ### Troubleshooting
 
