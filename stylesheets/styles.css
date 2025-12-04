@@ -330,3 +330,32 @@ mark_old_lavender { background-color: #736372; color: white; box-shadow: 0 0 0 0
     color: #444;
   }
 }
+
+.job-market-callout {
+    max-width: 520px;          /* keep it narrow + readable */
+    margin: 25px auto;         /* center it on the page */
+    padding: 15px 20px;
+    
+    background: #fafafa;       /* subtle contrast */
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+
+    text-align: center;
+    line-height: 1.45;
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06); /* light academic polish */
+}
+
+.job-market-callout strong {
+    color: #000;               /* emphasize headings */
+}
+
+.job-market-callout a {
+    color: #A51C30;            /* Harvard crimson (matches your current theme) */
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.job-market-callout a:hover {
+    text-decoration: underline;
+}
