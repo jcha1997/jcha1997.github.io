@@ -87,6 +87,22 @@ a {
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
+@media screen and (max-width: 960px) {
+  .site-header {
+    width: auto;
+    float: none;
+    position: static;
+    margin-bottom: 20px;
+  }
+
+  section {
+    float: none;
+    width: auto;
+    padding-bottom: 20px;
+  }
+}
+
+
 /* Card container around name, photo, tagline, icons */
 .profile-card {
   padding: 16px 14px;
