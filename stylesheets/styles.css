@@ -319,6 +319,29 @@ mark_old_lavender { background-color: #736372; color: white; box-shadow: 0 0 0 0
   color: white !important;
 }
 
+@media screen and (max-width: 600px) {
+  .topnav {
+    display: block;
+  }
+
+  .topnav a,
+  .topnav a:link,
+  .topnav a:visited,
+  .topnav a:active,
+  .topnav a:focus {
+    float: none;              /* stop them from sitting side by side */
+    display: block;           /* full-width row */
+    text-align: left;         /* or center if you prefer */
+    padding: 8px 12px !important;
+    border-top: 1px solid #e5e5e5;
+  }
+
+  .topnav a:first-child {
+    border-top: none;
+  }
+}
+
+
 /* ---------------------------------------------------------- */
 /* Media Queries                                              */
 /* ---------------------------------------------------------- */
