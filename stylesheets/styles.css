@@ -73,73 +73,102 @@ a {
 }
 
 /* ---------------------------------------------------------- */
-/* Header: photo + centered icons                             */
+/* Header / Profile card                                      */
 /* ---------------------------------------------------------- */
 
-header {
+.site-header {
+  text-align: center;
+  margin-bottom: 20px;
+
+  /* restore left-column layout */
   width: 270px;
   float: left;
   position: fixed;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
-/* Left-aligned profile photo */
-header > div:first-of-type img {
+/* Card container around name, photo, tagline, icons */
+.profile-card {
+  padding: 16px 14px;
+  background: #fafafa;
+  border: 1px solid #e4e4e4;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+/* Title / name */
+.site-title {
+  margin: 0 0 8px 0;
+}
+
+.site-title-link {
+  text-decoration: none;
+  color: black;
+}
+
+/* Photo + tagline */
+.profile-photo {
   display: block;
-  margin: 0;   /* left aligned */
+  margin: 0 auto 8px auto; /* center horizontally */
+  border-radius: 50%;
 }
 
-/* Icon container: same width as photo, centered within that box */
-header > div:nth-of-type(2) {
-  width: 185px !important;   /* match photo width */
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  text-align: center !important;  /* center icons INSIDE 185px */
+.tagline {
+  margin: 4px 0 10px 0;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.3;
 }
 
-/* Fixed width icon blocks so no shifting occurs */
-header > div:nth-of-type(2) a {
-  display: inline-block;
-  width: 40px;                /* consistent box size */
-  text-align: center;
-  padding: 0 !important;
-  margin: 0;
-  border-bottom: none !important;
-  background: none !important;
-  transition: none !important;
+/* Social icons row */
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.social-links a {
+  border-bottom: none;
+  font-size: 2rem;
+  padding: 0;
+  background: none;
+}
+
+/* default icon color + hover crimson */
+.social-links a i {
+  color: black;
+  transition: color 0.2s ease;
+}
+
+/* remove global link hover “pill” effect for these icons */
+.social-links a:hover {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* icon hover = crimson only */
+.social-links a:hover i {
+  color: #A51C30;
 }
 
 /* ---------------------------------------------------------- */
-/* Social Icons                                                */
+/* Social Icons (generic)                                     */
 /* ---------------------------------------------------------- */
 
+/* If you want generic icon styling elsewhere, keep this light */
 .fab,
 .fas,
 .fa-brands {
-  color: #000000;
-  font-size: 2em !important;
-  line-height: 1 !important;
-  width: 1em;                /* ensures icons don’t change width on hover */
-  transition: none !important;
+  line-height: 1;
 }
 
-/* Slightly larger X icon for visual parity */
+/* Slightly larger X icon for visual parity (optional) */
 .fa-x-twitter {
-  font-size: 2.02em !important;
-  vertical-align: -2px !important;
-  transition: none !important;
-}
-
-/* Icon hover = color only */
-header > div:nth-of-type(2) a:hover i {
-  color: #A51C30 !important;
-}
-
-header > div:nth-of-type(2) a:hover,
-header > div:nth-of-type(2) a:hover i {
-  background: none !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
+  vertical-align: -2px;
 }
 
 /* ---------------------------------------------------------- */
@@ -261,7 +290,6 @@ mark_old_lavender { background-color: #736372; color: white; box-shadow: 0 0 0 0
   text-decoration: none;
   font-size: 17px;
   border-radius: 0 !important;
-
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
@@ -331,31 +359,32 @@ mark_old_lavender { background-color: #736372; color: white; box-shadow: 0 0 0 0
   }
 }
 
+/* ---------------------------------------------------------- */
+/* Job Market Callout                                         */
+/* ---------------------------------------------------------- */
+
 .job-market-callout {
-    max-width: 520px;          /* keep it narrow + readable */
-    margin: 25px auto;         /* center it on the page */
-    padding: 15px 20px;
-    
-    background: #fafafa;       /* subtle contrast */
-    border: 1px solid #e2e2e2;
-    border-radius: 8px;
-
-    text-align: center;
-    line-height: 1.45;
-
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06); /* light academic polish */
+  max-width: 520px;
+  margin: 25px auto;
+  padding: 15px 20px;
+  background: #fafafa;
+  border: 1px solid #e2e2e2;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 1.45;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 .job-market-callout strong {
-    color: #000;               /* emphasize headings */
+  color: #000;
 }
 
 .job-market-callout a {
-    color: #A51C30;            /* Harvard crimson (matches your current theme) */
-    font-weight: 600;
-    text-decoration: none;
+  color: #A51C30;
+  font-weight: 600;
+  text-decoration: none;
 }
 
 .job-market-callout a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
