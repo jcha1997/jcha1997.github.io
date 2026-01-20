@@ -1,18 +1,155 @@
 /* ---------------------------------------------------------- */
-/* Base Typography & Layout                                   */
+/* CSS Custom Properties (Light/Dark Mode)                    */
 /* ---------------------------------------------------------- */
 
-body {
-  background-color: #fff;
-  padding: 50px;
-  font-family: "Computer Modern Sans", sans-serif;
-  color: #595959;
-  font-weight: 320;
+:root {
+  /* Light mode colors */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.7);
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --border-color: rgba(148, 163, 184, 0.2);
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --shadow-lg: rgba(0, 0, 0, 0.12);
+
+  /* Brand colors - American University */
+  --accent-primary: #002855;
+  --accent-secondary: #ED1B2E;
+  --accent-gradient: linear-gradient(135deg, #002855 0%, #003d7a 50%, #0052a3 100%);
+  --accent-glow: rgba(0, 40, 85, 0.3);
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+[data-theme="dark"] {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-glass: rgba(30, 41, 59, 0.8);
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border-color: rgba(148, 163, 184, 0.15);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --shadow-lg: rgba(0, 0, 0, 0.4);
+
+  --accent-glow: rgba(0, 40, 85, 0.5);
+
+  --glass-bg: rgba(30, 41, 59, 0.85);
+  --glass-border: rgba(71, 85, 105, 0.3);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------------------------------------------------------- */
+/* Base & Reset                                               */
+/* ---------------------------------------------------------- */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-primary);
+  padding: 50px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text-secondary);
+  font-weight: 400;
+  line-height: 1.6;
+  transition: background-color var(--transition-base), color var(--transition-base);
+  min-height: 100vh;
+}
+
+
+/* ---------------------------------------------------------- */
+/* Scroll Progress Indicator                                  */
+/* ---------------------------------------------------------- */
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--accent-primary);
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+/* ---------------------------------------------------------- */
+/* Theme Toggle Button                                        */
+/* ---------------------------------------------------------- */
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent-primary);
+}
+
+.theme-toggle i {
+  position: absolute;
+  font-size: 1.2rem;
+  transition: all var(--transition-base);
+}
+
+.theme-toggle .fa-moon {
+  color: var(--text-primary);
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.theme-toggle .fa-sun {
+  color: #fbbf24;
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+
+[data-theme="dark"] .theme-toggle .fa-moon {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+[data-theme="dark"] .theme-toggle .fa-sun {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+/* ---------------------------------------------------------- */
+/* Typography                                                 */
+/* ---------------------------------------------------------- */
+
 h1, h2, h3, h4, h5, h6 {
-  color: #222;
+  color: var(--text-primary);
   margin: 0 0 20px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 p, table, pre, dl {
@@ -25,27 +162,27 @@ ul, ol {
 }
 
 h1, h2, h3 {
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
 h1 {
   font-size: 28px;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 h2 {
-  color: #393939;
-  font-weight: 500;
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 h3, h4, h5, h6 {
-  color: #494949;
-  font-weight: 500;
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 strong {
-  color: #222;
-  font-weight: 500;
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 /* ---------------------------------------------------------- */
@@ -57,30 +194,51 @@ a:link,
 a:focus,
 a:active,
 a:visited {
-  color: #A51C30;
-  text-decoration-line: none;
+  color: var(--accent-primary);
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+}
+
+[data-theme="dark"] a,
+[data-theme="dark"] a:link,
+[data-theme="dark"] a:focus,
+[data-theme="dark"] a:active,
+[data-theme="dark"] a:visited {
+  color: #6b9fd4;
 }
 
 a:hover {
-  background-color: #A51C30;
-  color: white !important;
-  padding: 0 2px;
-  border-radius: 2px;
+  color: var(--accent-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-primary);
 }
 
-a {
-  transition: all 0.2s ease-in-out;
+[data-theme="dark"] a:hover {
+  color: #93b8e0;
+  text-decoration-color: #93b8e0;
 }
 
 /* ---------------------------------------------------------- */
-/* Header / Profile card                                      */
+/* Glassmorphism Card                                         */
+/* ---------------------------------------------------------- */
+
+.glass-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: 0 1px 3px var(--shadow-color);
+}
+
+/* ---------------------------------------------------------- */
+/* Header / Profile Card                                      */
 /* ---------------------------------------------------------- */
 
 .site-header {
   text-align: center;
   margin-bottom: 20px;
-
-  /* restore left-column layout */
   width: 270px;
   float: left;
   position: fixed;
@@ -102,93 +260,84 @@ a {
   }
 }
 
-
-/* Card container around name, photo, tagline, icons */
 .profile-card {
-  padding: 16px 14px;
-  background: #fafafa;
-  border: 1px solid #e4e4e4;
-  border-radius: 10px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  padding: 24px 20px;
 }
 
-/* Title / name */
 .site-title {
-  margin: 0 0 8px 0;
+  margin: 0 0 12px 0;
 }
 
 .site-title-link {
   text-decoration: none;
-  color: black;
+  color: var(--text-primary);
 }
 
-/* Photo + tagline */
+[data-theme="dark"] .site-title-link {
+  color: #f1f5f9;
+}
+
+.site-title-link:hover {
+  color: var(--accent-primary);
+  text-decoration: none;
+}
+
+[data-theme="dark"] .site-title-link:hover {
+  color: #6b9fd4;
+}
+
+/* Profile Photo */
 .profile-photo {
   display: block;
-  margin: 0 auto 8px auto; /* center horizontally */
+  margin: 0 auto 12px auto;
   border-radius: 50%;
 }
 
 .tagline {
-  margin: 4px 0 10px 0;
+  margin: 8px 0 14px 0;
   font-size: 0.95rem;
-  color: #555;
-  line-height: 1.3;
+  color: var(--text-muted);
+  line-height: 1.4;
 }
 
-/* Social icons row */
+/* ---------------------------------------------------------- */
+/* Social Links                                               */
+/* ---------------------------------------------------------- */
+
 .social-links {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  margin-top: 4px;
+  gap: 12px;
+  margin-top: 8px;
   margin-bottom: 4px;
 }
 
 .social-links a {
-  border-bottom: none;
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 0;
   background: none;
 }
 
-/* default icon color + hover crimson */
 .social-links a i {
-  color: black;
-  transition: color 0.2s ease;
+  color: var(--text-primary);
+  transition: color var(--transition-fast);
 }
 
-/* remove global link hover “pill” effect for these icons */
 .social-links a:hover {
-  background: none;
-  padding: 0;
-  border-radius: 0;
+  text-decoration: none;
 }
 
-/* icon hover = crimson only */
 .social-links a:hover i {
-  color: #A51C30;
+  color: var(--accent-primary);
+}
+
+[data-theme="dark"] .social-links a:hover i {
+  color: #6b9fd4;
 }
 
 /* ---------------------------------------------------------- */
-/* Social Icons (generic)                                     */
-/* ---------------------------------------------------------- */
-
-/* If you want generic icon styling elsewhere, keep this light */
-.fab,
-.fas,
-.fa-brands {
-  line-height: 1;
-}
-
-/* Slightly larger X icon for visual parity (optional) */
-.fa-x-twitter {
-  vertical-align: -2px;
-}
-
-/* ---------------------------------------------------------- */
-/* Main Layout                                                 */
+/* Main Layout                                                */
 /* ---------------------------------------------------------- */
 
 .wrapper {
@@ -203,22 +352,23 @@ section {
 }
 
 blockquote {
-  border-left: 1px solid #e5e5e5;
+  border-left: 3px solid var(--accent-primary);
   margin: 0;
   padding: 0 0 0 20px;
   font-style: italic;
+  color: var(--text-muted);
 }
 
 code, pre {
-  font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
-  color: #333;
+  font-family: 'JetBrains Mono', Monaco, Consolas, monospace;
+  color: var(--text-primary);
 }
 
 pre {
-  padding: 8px 15px;
-  background: #f8f8f8;
-  border-radius: 5px;
-  border: 1px solid #e5e5e5;
+  padding: 16px 20px;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
   overflow-x: auto;
 }
 
@@ -229,17 +379,13 @@ table {
 
 th, td {
   text-align: left;
-  padding: 5px 10px;
-  border-bottom: 1px solid #e5e5e5;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
 }
 
 th {
-  color: #444;
-}
-
-dt {
-  color: #444;
-  font-weight: 500;
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 img {
@@ -247,14 +393,15 @@ img {
 }
 
 small {
-  font-size: 11px;
+  font-size: 12px;
+  color: var(--text-muted);
 }
 
 hr {
   border: 0;
-  background: #e5e5e5;
+  background: var(--border-color);
   height: 1px;
-  margin: 0 0 20px;
+  margin: 30px 0;
 }
 
 footer {
@@ -266,31 +413,11 @@ footer {
 }
 
 /* ---------------------------------------------------------- */
-/* Mark highlight styles                                      */
-/* ---------------------------------------------------------- */
-
-mark_harvard { background-color: #A51C30 !important; color: white !important; box-shadow: 0 0 0 0.5px #A51C30 !important; }
-mark_gold { background-color: #C69214; color: white; box-shadow: 0 0 0 0.5px #C69214; }
-mark_black { background-color: #2F323A; color: white; box-shadow: 0 0 0 .5px #2F323A; }
-mark_laker { background-color: #C47AC0; color: white; box-shadow: 0 0 0 0.5px #C47AC0; }
-mark_blue { background-color: #258EA6; color: white; box-shadow: 0 0 0 0.5px #258EA6; }
-mark_yellow { background-color: #E9C46A; color: white; box-shadow: 0 0 0 0.5px #E9C46A; }
-mark_green { background-color: #2A9D8F; color: white; box-shadow: 0 0 0 0.5px #2A9D8F; }
-mark_orange { background-color: #F4A261; color: white; box-shadow: 0 0 0 0.5px #F4A261; }
-mark_turq { background-color: #009FB7; color: white; box-shadow: 0 0 0 0.5px #009FB7; }
-mark_red { background-color: #E76F51; color: white; box-shadow: 0 0 0 0.5px #E76F51; }
-mark_twitter { background-color: #1DA1F2; color: white; box-shadow: 0 0 0 0.5px #1DA1F2; }
-mark_light_purple { background-color: #A7A5C6; color: white; box-shadow: 0 0 0 0.5px #A7A5C6; }
-mark_charcoal { background-color: #3A6EA5; color: white; box-shadow: 0 0 0 0.5px #3A6EA5; }
-mark_dodger { background-color: #1e90ff; color: white; box-shadow: 0 0 0 0.5px #1e90ff; }
-mark_old_lavender { background-color: #736372; color: white; box-shadow: 0 0 0 0.5px #736372; }
-
-/* ---------------------------------------------------------- */
 /* Top Navigation                                             */
 /* ---------------------------------------------------------- */
 
 .topnav {
-  background-color: #fff;
+  background: transparent;
   overflow: hidden;
 }
 
@@ -300,23 +427,23 @@ mark_old_lavender { background-color: #736372; color: white; box-shadow: 0 0 0 0
 .topnav a:active,
 .topnav a:focus {
   float: left;
-  color: #000000 !important;
-  background: none !important;
-  padding: 8px 16px !important;
+  color: var(--text-primary);
+  background: none;
+  padding: 8px 16px;
   text-decoration: none;
   font-size: 17px;
-  border-radius: 0 !important;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
 }
 
 .topnav a:hover {
-  background-color: #A51C30 !important;
-  color: white !important;
+  background-color: var(--accent-primary);
+  color: white;
+  text-decoration: none;
 }
 
 .topnav a.active {
-  background-color: #A51C30 !important;
-  color: white !important;
+  background-color: var(--accent-primary);
+  color: white;
 }
 
 @media screen and (max-width: 600px) {
@@ -329,11 +456,11 @@ mark_old_lavender { background-color: #736372; color: white; box-shadow: 0 0 0 0
   .topnav a:visited,
   .topnav a:active,
   .topnav a:focus {
-    float: none;              /* stop them from sitting side by side */
-    display: block;           /* full-width row */
-    text-align: left;         /* or center if you prefer */
-    padding: 8px 12px !important;
-    border-top: 1px solid #e5e5e5;
+    float: none;
+    display: block;
+    text-align: left;
+    padding: 8px 12px;
+    border-top: 1px solid var(--border-color);
   }
 
   .topnav a:first-child {
@@ -341,6 +468,66 @@ mark_old_lavender { background-color: #736372; color: white; box-shadow: 0 0 0 0
   }
 }
 
+/* ---------------------------------------------------------- */
+/* Job Market Callout                                         */
+/* ---------------------------------------------------------- */
+
+.job-market-callout {
+  max-width: 520px;
+  margin: 25px auto;
+  padding: 15px 20px;
+  text-align: center;
+  line-height: 1.45;
+}
+
+.job-market-callout h3 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.job-market-callout strong {
+  color: var(--text-primary);
+}
+
+.job-market-callout a {
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+[data-theme="dark"] .job-market-callout a {
+  color: #6b9fd4;
+}
+
+/* ---------------------------------------------------------- */
+/* Animations (minimal)                                       */
+/* ---------------------------------------------------------- */
+
+/* Simple fade-in class - can be removed from HTML if not wanted */
+.animate-fade-in {
+  /* No animation - keep class for compatibility */
+}
+
+/* ---------------------------------------------------------- */
+/* Mark Highlight Styles                                      */
+/* ---------------------------------------------------------- */
+
+mark_au_blue { background-color: #002855 !important; color: white !important; box-shadow: 0 0 0 0.5px #002855 !important; border-radius: 3px; }
+mark_au_red { background-color: #ED1B2E !important; color: white !important; box-shadow: 0 0 0 0.5px #ED1B2E !important; border-radius: 3px; }
+mark_gold { background-color: #C69214; color: white; box-shadow: 0 0 0 0.5px #C69214; border-radius: 3px; }
+mark_black { background-color: #2F323A; color: white; box-shadow: 0 0 0 .5px #2F323A; border-radius: 3px; }
+mark_laker { background-color: #C47AC0; color: white; box-shadow: 0 0 0 0.5px #C47AC0; border-radius: 3px; }
+mark_blue { background-color: #258EA6; color: white; box-shadow: 0 0 0 0.5px #258EA6; border-radius: 3px; }
+mark_yellow { background-color: #E9C46A; color: white; box-shadow: 0 0 0 0.5px #E9C46A; border-radius: 3px; }
+mark_green { background-color: #2A9D8F; color: white; box-shadow: 0 0 0 0.5px #2A9D8F; border-radius: 3px; }
+mark_orange { background-color: #F4A261; color: white; box-shadow: 0 0 0 0.5px #F4A261; border-radius: 3px; }
+mark_turq { background-color: #009FB7; color: white; box-shadow: 0 0 0 0.5px #009FB7; border-radius: 3px; }
+mark_red { background-color: #E76F51; color: white; box-shadow: 0 0 0 0.5px #E76F51; border-radius: 3px; }
+mark_twitter { background-color: #1DA1F2; color: white; box-shadow: 0 0 0 0.5px #1DA1F2; border-radius: 3px; }
+mark_light_purple { background-color: #A7A5C6; color: white; box-shadow: 0 0 0 0.5px #A7A5C6; border-radius: 3px; }
+mark_charcoal { background-color: #3A6EA5; color: white; box-shadow: 0 0 0 0.5px #3A6EA5; border-radius: 3px; }
+mark_dodger { background-color: #1e90ff; color: white; box-shadow: 0 0 0 0.5px #1e90ff; border-radius: 3px; }
+mark_old_lavender { background-color: #736372; color: white; box-shadow: 0 0 0 0.5px #736372; border-radius: 3px; }
 
 /* ---------------------------------------------------------- */
 /* Media Queries                                              */
@@ -359,20 +546,27 @@ mark_old_lavender { background-color: #736372; color: white; box-shadow: 0 0 0 0
   }
 
   header {
-    padding-right: 320px;
+    padding-right: 0;
   }
 
   section {
-    border: 1px solid #e5e5e5;
-    border-width: 1px 0;
+    border: none;
     padding: 20px 0;
     margin: 0 0 20px;
+  }
+
+  .theme-toggle {
+    top: 10px;
+    right: 10px;
+    width: 42px;
+    height: 42px;
   }
 }
 
 @media print, screen and (max-width: 720px) {
   body {
     word-wrap: break-word;
+    padding: 30px;
   }
 
   header {
@@ -386,7 +580,17 @@ mark_old_lavender { background-color: #736372; color: white; box-shadow: 0 0 0 0
 
 @media print, screen and (max-width: 480px) {
   body {
-    padding: 15px;
+    padding: 20px;
+  }
+
+  .profile-card {
+    padding: 20px 16px;
+  }
+
+  .social-links a {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
   }
 }
 
@@ -395,35 +599,39 @@ mark_old_lavender { background-color: #736372; color: white; box-shadow: 0 0 0 0
     padding: 0.4in;
     font-size: 12pt;
     color: #444;
+    background: white;
+  }
+
+  body::before {
+    display: none;
+  }
+
+  .theme-toggle,
+  .scroll-progress {
+    display: none;
   }
 }
 
 /* ---------------------------------------------------------- */
-/* Job Market Callout                                         */
+/* Selection Styling                                          */
 /* ---------------------------------------------------------- */
 
-.job-market-callout {
-  max-width: 520px;
-  margin: 25px auto;
-  padding: 15px 20px;
-  background: #fafafa;
-  border: 1px solid #e2e2e2;
-  border-radius: 8px;
-  text-align: center;
-  line-height: 1.45;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+::selection {
+  background: var(--accent-primary);
+  color: white;
 }
 
-.job-market-callout strong {
-  color: #000;
+::-moz-selection {
+  background: var(--accent-primary);
+  color: white;
 }
 
-.job-market-callout a {
-  color: #A51C30;
-  font-weight: 600;
-  text-decoration: none;
-}
+/* ---------------------------------------------------------- */
+/* Focus States for Accessibility                             */
+/* ---------------------------------------------------------- */
 
-.job-market-callout a:hover {
-  text-decoration: underline;
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
 }

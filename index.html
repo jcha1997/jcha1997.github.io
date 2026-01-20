@@ -28,6 +28,9 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Jeremiah Cha</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="stylesheets/styles.css" />
     <link rel="stylesheet" href="stylesheets/pygment_trac.css" />
@@ -60,6 +63,15 @@
   </head>
 
   <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress"></div>
+
+    <!-- Dark Mode Toggle -->
+    <button class="theme-toggle" aria-label="Toggle dark mode">
+      <i class="fas fa-moon"></i>
+      <i class="fas fa-sun"></i>
+    </button>
+
     <!-- Google Tag Manager (noscript) -->
     <noscript>
       <iframe
@@ -71,9 +83,9 @@
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <div class="wrapper">
+    <div class="wrapper animate-fade-in">
       <header class="site-header">
-        <div class="profile-card">
+        <div class="profile-card glass-card">
           <h1 class="site-title">
             <a class="site-title-link" href="/">Jeremiah Cha</a>
           </h1>
@@ -130,7 +142,7 @@
           I am also interested in applying modern statistical methods to measure political ideology and analyze political text.
         </p>
 
-        <aside class="job-market-callout" aria-labelledby="job-market-heading">
+        <aside class="job-market-callout glass-card" aria-labelledby="job-market-heading">
           <h3 id="job-market-heading">I am on the 2025–2026 academic job market</h3>
           <p>
             <strong>Job Market Paper:</strong>
@@ -152,7 +164,7 @@
 
         <p>
           I can be reached at my email:
-          <a style="color:#A51C30" href="mailto:jeremiahcha@g.harvard.edu">jeremiahcha@g.harvard.edu</a>.
+          <a href="mailto:jeremiahcha@g.harvard.edu">jeremiahcha@g.harvard.edu</a>.
         </p>
 
         <hr>
@@ -170,5 +182,6 @@
     </div>
 
     <script src="javascripts/scale.fix.js"></script>
+    <script src="javascripts/theme.js"></script>
   </body>
 </html>
