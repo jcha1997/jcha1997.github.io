@@ -64,7 +64,7 @@ html {
 body {
   background: var(--bg-primary);
   padding: 50px;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--text-secondary);
   font-weight: 400;
   line-height: 1.6;
@@ -146,10 +146,10 @@ body {
 /* ---------------------------------------------------------- */
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--text-primary);
   margin: 0 0 20px;
   font-weight: 600;
-  letter-spacing: -0.02em;
 }
 
 p, table, pre, dl {
@@ -269,8 +269,12 @@ a:hover {
 }
 
 .site-title-link {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
   text-decoration: none;
   color: var(--text-primary);
+  position: relative;
+  display: inline-block;
 }
 
 [data-theme="dark"] .site-title-link {
@@ -284,6 +288,42 @@ a:hover {
 
 [data-theme="dark"] .site-title-link:hover {
   color: #6b9fd4;
+}
+
+/* Subtle underline reveal animation */
+.site-title-link::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-primary);
+  animation: underline-reveal 20s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+[data-theme="dark"] .site-title-link::after {
+  background: #6b9fd4;
+}
+
+@keyframes underline-reveal {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  3% {
+    width: 100%;
+    opacity: 1;
+  }
+  6% {
+    width: 100%;
+    opacity: 1;
+  }
+  9%, 100% {
+    width: 0;
+    opacity: 0;
+  }
 }
 
 /* Profile Photo */
