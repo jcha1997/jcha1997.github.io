@@ -194,8 +194,9 @@ a:link,
 a:focus,
 a:active,
 a:visited {
-  color: var(--accent-primary);
-  text-decoration: none;
+  color: #0059b3;
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 89, 179, 0.3);
   text-decoration-skip-ink: auto;
   transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
   text-underline-offset: 3px;
@@ -211,9 +212,9 @@ a:visited {
 }
 
 a:hover {
-  color: var(--accent-primary);
+  color: #004494;
   text-decoration: underline;
-  text-decoration-color: var(--accent-primary);
+  text-decoration-color: #004494;
 }
 
 [data-theme="dark"] a:hover {

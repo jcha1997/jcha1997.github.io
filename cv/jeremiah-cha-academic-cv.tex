@@ -1,147 +1,192 @@
-% LaTeX resume using res.cls
-\documentclass[margin, line]{res}
+% Academic CV - Clean single-column template
+\documentclass[11pt, letterpaper]{article}
 
+% Page geometry
+\usepackage[margin=1in]{geometry}
+
+% Fonts - modern sans-serif
+\usepackage[default]{sourcesanspro}
+\usepackage[T1]{fontenc}
+
+% Packages
 \usepackage[hidelinks]{hyperref}
-\usepackage{etaremune} % Backwards numbered lists 
-\usepackage{marvosym} % Symbols for email, website
-\usepackage{multicol} % Multiple columns for section headings
-\usepackage{xcolor}	% Color
-\usepackage{datetime2} % Adding the date of update at the bottom
-\usepackage{indentfirst} % Paragraph indents
+\usepackage{etaremune}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{datetime2}
 
-\definecolor{crimson}{rgb}{0.86, 0.08, 0.24}
-\def\sectionfont{\normalsize\bfseries}
-
+% Hyperlink setup
 \hypersetup{
     colorlinks=true,
-    linkcolor=crimson,
-    filecolor=crimson,      
-    urlcolor=crimson,
-  	pdftitle={Jeremiah Cha – Academic Curriculum Vitae},
-  	pdfauthor={Jeremiah Cha},
-  	pdfsubject={Academic CV},
-  	pdfkeywords={Jeremiah Cha, curriculum vitae, CV, political science, Harvard}
-    pdfpagemode=FullScreen,
-    }
- \renewcommand{\familydefault}{\sfdefault}
-\sectionskip=1.5ex plus 1ex minus -.2ex % values stolen from LaTeX
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=black,
+    pdftitle={Jeremiah Cha -- Academic Curriculum Vitae},
+    pdfauthor={Jeremiah Cha},
+    pdfsubject={Academic CV},
+    pdfkeywords={Jeremiah Cha, curriculum vitae, CV, political science, Harvard}
+}
+
+% Section formatting
+\titleformat{\section}
+    {\large\bfseries\scshape\color{black}}
+    {}
+    {0em}
+    {}
+    [\titlerule]
+\titlespacing*{\section}{0pt}{2ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+% Remove page numbers
+\pagenumbering{gobble}
+
+% Custom commands
+\newcommand{\entry}[2]{\noindent #1 \hfill #2\\}
+\newcommand{\subentry}[1]{\hspace*{1em}#1\\}
+\newcommand{\subentrydate}[2]{\hspace*{1em}#1 \hfill #2\\}
+
+% Reduce list spacing
+\setlist[enumerate]{itemsep=0.5ex, parsep=0pt, topsep=0.5ex}
+
 \begin{document}
 
-\name{Jeremiah Cha}
-\begin{resume}
+% Header
+\begin{center}
+    {\Huge\bfseries Jeremiah Cha}\\[1ex]
+    CGIS Knafel, 1737 Cambridge St, Cambridge, MA 02138\\[0.5ex]
+    \href{mailto:jeremiahcha@g.harvard.edu}{jeremiahcha@g.harvard.edu} ~$\cdot$~
+    \href{https://www.jeremiahcha.com}{www.jeremiahcha.com} ~$\cdot$~
+    \href{https://orcid.org/0000-0003-3199-3386}{orcid.org/0000-0003-3199-3386}
+\end{center}
 
-\section{Contact}
-CGIS Knafel \hfill \Letter: \href{mailto:jeremiahcha@g.harvard.edu}{jeremiahcha@g.harvard.edu}\\
-1737 Cambridge St \hfill \Mundus: \href{httsp://www.jeremiahcha.com}{www.jeremiahcha.com}\\
-Cambridge, MA 02138 \hfill \Mundus: \href{https://orcid.org/0000-0003-3199-3386}{orcid.org/0000-0003-3199-3386}
+\vspace{1ex}
+
+\section{Academic Appointments}
+\entry{\textbf{American University}}{2027-}
+\subentry{Assistant Professor of Government}
+
+\entry{\textbf{Princeton University}}{2026-2027}
+\subentry{Post-doctoral Fellow, Center for the Study of Democratic Politics}
 
 \section{Education}
-Harvard University \hfill Expected 2026\\
-\hspace*{5mm} Ph.D., Government\\
-\hspace*{10mm} {\footnotesize ``Racial Representation in American Local Politics''}\\
-\hspace*{10mm} {\footnotesize Committee: James M. Snyder, Jr., Stephen D. Ansolabehere, Taeku Lee, Stephanie Ternullo}\\
-\hspace*{5mm} A.M., Government \hfill 2022
 
-University of California, San Diego\hfill 2019\\
-\hspace*{5mm} B.A., Political Science (High Honors), \textit{magna cum laude} 
+\entry{\textbf{Harvard University}}{Expected 2026}
+\subentry{Ph.D., Government}
+\subentry{\small Dissertation: ``Racial Representation in American Local Politics''}
+\subentry{\small Committee: James M. Snyder, Jr., Stephen D. Ansolabehere, Taeku Lee, Stephanie Ternullo}
+\subentrydate{A.M., Government}{2022}
+
+\vspace{0.5ex}
+\entry{\textbf{University of California, San Diego}}{2019}
+\subentry{B.A., Political Science (High Honors), \textit{magna cum laude}}
 
 \section{Peer-Reviewed Publications}
+
 \begin{etaremune}
-    \item Cha, Jeremiah, and Jon C. Rogowski. (2025). ``Mechanisms of checks and balances: Appropriations, congressional committees, and interbranch conflict.'' \emph{Legislative Studies Quarterly} 50(3).
-    \item Cha, Jeremiah, Justin Gest, and Tom K. Wong. (2025). ``Dilemmas in representation: Immigration, identity, and political parties.'' \emph{Journal of Race, Ethnicity, and Politics} 10(3).
+    \item Cha, Jeremiah, and Jon C. Rogowski. (2025). \href{https://onlinelibrary.wiley.com/doi/10.1111/lsq.70028}{``Mechanisms of checks and balances: Appropriations, congressional committees, and interbranch conflict.''} \emph{Legislative Studies Quarterly} 50(3).
+    \item Cha, Jeremiah, Justin Gest, and Tom K. Wong. (2025). \href{https://www.cambridge.org/core/journals/journal-of-race-ethnicity-and-politics/article/abs/dilemmas-in-representation-immigration-identity-and-political-parties/212CAAFE1CD364A32E8C09B23832A0A0}{``Dilemmas in representation: Immigration, identity, and political parties.''} \emph{Journal of Race, Ethnicity, and Politics} 10(3).
 \end{etaremune}
 
 \section{Working Papers}
+
 \begin{etaremune}
-	\item ``Building Representation: The Politics of Development, Diversity, and
-Institutional Norms''
-	\item ``Measuring Issue Racialization''
-	\item ``Preaching to the (After School) Choir: Studying Representation and Racialized Agendas Using School Board Meetings (with Hunter Rendleman and Tyler Simko)'' 
+    \item ``Building Representation: The Politics of Development, Diversity, and Institutional Norms''
+    \item ``Measuring Issue Racialization''
+    \item ``Preaching to the (After School) Choir: Studying Representation and Racialized Agendas Using School Board Meetings'' (with Hunter Rendleman and Tyler Simko)
 \end{etaremune}
 
-\section{Selected Works \\in Progress}
+\section{Selected Works in Progress}
+
 \begin{etaremune}
-	\item  ``Identifying Local Civil Service'' (with Justin de Benedictis-Kessner)
-	\item ``Revisiting Committees: Evaluating Theories of Legislative Organization'' (with Sooahn Shin)
+    \item ``Identifying Local Civil Service'' (with Justin de Benedictis-Kessner)
+    \item ``Revisiting Committees: Evaluating Theories of Legislative Organization'' (with Sooahn Shin)
 \end{etaremune}
 
 \section{Data}
+
 \begin{etaremune}
-	\item Cha, Jeremiah, Shiro Kuriwaki, and James M. Snyder, Jr. (2025). ``Candidates in American General Elections.'' Harvard Dataverse. \textsc{doi}: \href{https://doi.org/10.7910/DVN/DGDRDT}{\texttt{10.7910/DVN/DGDRDT}}.
+    \item Cha, Jeremiah, Shiro Kuriwaki, and James M. Snyder, Jr. (2025). ``Candidates in American General Elections.'' Harvard Dataverse. \textsc{doi}: \href{https://doi.org/10.7910/DVN/DGDRDT}{\texttt{10.7910/DVN/DGDRDT}}.
 \end{etaremune}
 
-\section{Non-refereed Publications}
+\section{Non-Refereed Publications}
+
 \begin{etaremune}
-	\item Cha, Jeremiah. (2025). ``Electing foreign-born legislators show more support for permissive immigration policies in the US, but not in the UK or Canada.'' \emph{LSE Phelan US Centre}.
-	\item Devlin, Kat, Regina Widjaya, and Jeremiah Cha. (2020). ``For global legislators on Twitter, an engaged minority creates outsize share of content.'' \emph{Pew Research Center}.
-    \item Cha, Jeremiah. (2020). ``Fast facts about South Koreans’ views of democracy as legislative election nears.'' \emph{Pew Research Center}.
+    \item Cha, Jeremiah. (2025). ``Electing foreign-born legislators show more support for permissive immigration policies in the US, but not in the UK or Canada.'' \emph{LSE Phelan US Centre}.
+    \item Devlin, Kat, Regina Widjaya, and Jeremiah Cha. (2020). ``For global legislators on Twitter, an engaged minority creates outsize share of content.'' \emph{Pew Research Center}.
+    \item Cha, Jeremiah. (2020). ``Fast facts about South Koreans' views of democracy as legislative election nears.'' \emph{Pew Research Center}.
     \item Cha, Jeremiah. (2020). ``People in Asia-Pacific regard the U.S. more favorably than China, but Trump gets negative marks.'' \emph{Pew Research Center}.
     \item Huang, Christine, and Jeremiah Cha. (2020). ``Russia and Putin receive low ratings globally.'' \emph{Pew Research Center}.
-    \item Fetterolf, Janell, and Jeremiah Cha. (2020). ``Few in other countries approve of Trump’s major foreign policies, but Israelis are an exception.'' \emph{Pew Research Center}.
+    \item Fetterolf, Janell, and Jeremiah Cha. (2020). ``Few in other countries approve of Trump's major foreign policies, but Israelis are an exception.'' \emph{Pew Research Center}.
     \item Wong, Tom K., Jeremiah Cha, and Erika Villareal-Garcia. (2019). ``The impact of changes to the public charge rule on undocumented immigrants living in the United States.'' \emph{U.S. Immigration Policy Center (USIPC) at UC San Diego}.
     \item Silver, Laura, Emily A. Vogels, Mara Mordecai, Jeremiah Cha, Raea Rasmussen, and Lee Rainie. (2019). ``Mobile divides in emerging economies.'' \emph{Pew Research Center}.
     \item Cha, Jeremiah. (2017). ``Dreaming of DACA.'' \emph{Claremont Journal of Law and Public Policy}.
 \end{etaremune}
 
+\section{Fellowships, Grants, and Awards}
 
-\section{Fellowships, Grants and \\Awards}
+\entry{Honorable Mention, Bryan Jackson Dissertation Award}{2025}
+\subentry{\textit{APSA Urban and Local Politics Section}}
+\entry{Pre-Doctoral Fellow, Election Law Clinic}{2025}
+\subentry{\textit{Harvard Law School}}
+\entry{Teaching Recognition}{2023, 2024}
+\subentry{\textit{Harvard Undergraduate Association}}
+\entry{CAPS Seed Grant (with Angelo Dagonel and Kiara Hernandez)}{2022}
+\subentry{\textit{Harvard University Center for American Political Studies}}
+\entry{Harvard GSC Conference Grant}{2022}
+\subentry{\textit{Harvard University GSAS}}
+\entry{V.O. Key Fellowship}{2020--2024}
+\subentry{\textit{Harvard University GSAS}}
+\entry{Phi Beta Kappa}{2019}
+\entry{Pi Sigma Alpha}{2017}
 
+\section{Selected Presentations}
 
-Honorable Mention, Bryan Jackson Dissertation Award \hfill 2025\\
-\hspace*{5mm} \textit{APSA Urban and Local Politics Section} \\
-Pre-Doctoral Fellow, Election Law Clinic \hfill 2025\\
-\hspace*{5mm} \textit{Harvard Law School}\\
-Teaching Recognition \hfill 2023, 2024\\
-\hspace*{5mm} \textit{Harvard Undergraduate Association}\\
-CAPS Seed Grant (with Angelo Dagonel and Kiara Hernandez)\hfill 2022\\
-\hspace*{5mm} \textit{Harvard University Center for American Political Studies}\\
-Harvard GSC Conference Grant \hfill 2022\\
-\hspace*{5mm} \textit{Harvard University GSAS}\\
-V.O. Key Fellowship \hfill 2020 - 2024\\
-\hspace*{5mm} \textit{Harvard University GSAS}\\
-Phi Beta Kappa \hfill 2019\\
-Pi Sigma Alpha \hfill 2017
+\entry{APSA}{2023, 2024, 2025}
+\subentrydate{Local Political Economy Conference}{2025}
+\entry{MPSA}{2023, 2024, 2025}
+\entry{Tufts University}{2023}
+\entry{Pew Research Center}{2020}
 
-\section{Selected \\Presentations}
-APSA \hfill 2023, 2024, 2025\\
-\hspace*{5mm} Local Political Economy Conference \hfill 2025\\
-MPSA \hfill 2023, 2024, 2025\\
-Tufts University \hfill 2023\\
-Pew Research Center  \hfill 2020
+\section{Teaching and Advising}
 
-\section{Teaching \\and Advising}
-Harvard College, Department of Government\\
-\hspace*{5mm} GOV 30, American Government: A New Perspective (Head TF) \hfill Fall 2023, 2024\\
-\hspace*{5mm} GOV 51, Data Analysis and Politics, (TF) \hfill Spring 2023, 2024\\
-\hspace*{5mm} GOV 30, American Government: A New Perspective,  (TF) \hfill Fall 2022
+\textbf{Harvard College, Department of Government}\\
+GOV 30, American Government: A New Perspective (Head TF) \hfill Fall 2023, 2024\\
+GOV 51, Data Analysis and Politics (TF) \hfill Spring 2023, 2024\\
+GOV 30, American Government: A New Perspective (TF) \hfill Fall 2022
 
-\hspace*{2.5mm} Thesis Advising \\
-\hspace*{5mm} Jack Holland (Government) \hfill Harvard '26\\
-\hspace*{5mm} Aaron Shuchman (Government) \hfill Harvard '25\\
-\hspace*{5mm} Ava Pallotta (Government) \hfill Harvard '25\\
-\hspace*{5mm} Oliver Adler (Government) \hfill Harvard '24
+\vspace{1ex}
+\noindent\textbf{Thesis Advising}\\
+Jack Holland (Government) \hfill Harvard '26\\
+Aaron Shuchman (Government) \hfill Harvard '25\\
+Ava Pallotta (Government) \hfill Harvard '25\\
+Oliver Adler (Government) \hfill Harvard '24
 
 \section{Service}
-Harvard University\\
-\hspace*{5mm} American Politics Speaker Series Coordinator \hfill 2022-2023, 2024-2025\\
-\hspace*{5mm} Diversity Committee, Harvard University \hfill 2020 - 2024\\
-\hspace*{5mm} American Politics Research Workshop Coordinator \hfill 2022 - 2023\\
-\hspace*{5mm} Communications Officer, Harvard Government GSA \hfill 2022 - 2023\\
-\hspace*{5mm} Rules and Election Officer, Harvard Government GSA \hfill 2021 - 2023\\
+
+\textbf{Referee}\\
+\textit{American Political Science Review (APSR) (1), American Journal of Political Science (AJPS) (1)}
+
+\vspace{1ex}
+\noindent\textbf{Harvard University}\\
+American Politics Speaker Series Coordinator \hfill 2022--2023, 2024--2025\\
+Diversity Committee \hfill 2020--2024\\
+American Politics Research Workshop Coordinator \hfill 2022--2023\\
+Communications Officer, Harvard Government GSA \hfill 2022--2023\\
+Rules and Election Officer, Harvard Government GSA \hfill 2021--2023
 
 \section{Non-Academic Experience}
-Brookings Institution, Governance Studies \hfill 2018\\
-House of Representatives, Intern \hfill 2017\\
-House of Representatives, Intern \hfill 2016\\
-Chaminade College Preparatory High School, Debate Coach \hfill 2015 - 2018
+
+\entry{Brookings Institution Governance Studies, Intern}{2018}
+\entry{House of Representatives, Intern}{2017}
+\entry{House of Representatives, Intern}{2016}
+\entry{Chaminade College Preparatory High School, Debate Coach}{2015--2018}
 
 \section{Skills}
-Technical: \texttt{R}, Python, Stata, SPSS, \LaTeX, HTML\\
-Language: English (Native), Korean (Limited Working)
 
-\vspace*{\fill}
+\noindent\textbf{Technical:} R, Python, Stata, SPSS, \LaTeX, HTML\\
+\textbf{Language:} English (Native), Korean (Limited Working)
 
+\vfill
 \hfill \small{\textit{Updated \today}}
 
-\end{resume}
 \end{document}
