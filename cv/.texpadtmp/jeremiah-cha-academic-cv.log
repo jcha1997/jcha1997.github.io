@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  9 FEB 2026 11:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  26 MAR 2026 10:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -528,26 +528,26 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has be
 <to be read again> 
                    \relax 
 l.158 \noindent
-               \textbf{Thesis Advising}\\ [2]
-Underfull \hbox (badness 10000) in paragraph at lines 179--183
+               \textbf{Undergraduate Thesis Advising}\\ [2]
+Underfull \hbox (badness 10000) in paragraph at lines 179--184
 
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 186.
+(Font)              <7> on input line 187.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 186.
+(Font)              <5> on input line 187.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/m/n' aliased to
-(Font)              `T1/SourceSansPro-TLF/regular/n' on input line 186.
+(Font)              `T1/SourceSansPro-TLF/regular/n' on input line 187.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/regular/n' will be
-(Font)              scaled to size 7.0pt on input line 186.
+(Font)              scaled to size 7.0pt on input line 187.
 
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.192 \end{document}
+l.193 \end{document}
                      [3] (/Users/jeremiahcha/Desktop/github/jcha1997.github.io/cv/.texpadtmp/jeremiah-cha-academic-cv.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
@@ -565,10 +565,10 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  75i,6n,79p,519b,563s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Bold.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-It.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Regular.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on /Users/jeremiahcha/Desktop/github/jcha1997.github.io/cv/.texpadtmp/jeremiah-cha-academic-cv.pdf (3 pages, 212973 bytes).
+Output written on /Users/jeremiahcha/Desktop/github/jcha1997.github.io/cv/.texpadtmp/jeremiah-cha-academic-cv.pdf (3 pages, 213607 bytes).
 PDF statistics:
- 113 PDF objects out of 1000 (max. 8388607)
- 95 compressed objects within 1 object stream
+ 117 PDF objects out of 1000 (max. 8388607)
+ 99 compressed objects within 1 object stream
  15 named destinations out of 1000 (max. 500000)
  105 words of extra memory for PDF output out of 10000 (max. 10000000)
 
