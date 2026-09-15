@@ -65,19 +65,22 @@ body.page-research {
   --accent-glow: rgba(44, 67, 115, 0.3);
 }
 
-body.page-research a:not(.author):not(.site-title-link),
-body.page-research a:not(.author):not(.site-title-link):link,
-body.page-research a:not(.author):not(.site-title-link):visited,
-body.page-research a:not(.author):not(.site-title-link):active,
-body.page-research a:not(.author):not(.site-title-link):focus {
+body.page-research a:not(ol a):not(.site-title-link),
+body.page-research a:not(ol a):not(.site-title-link):link,
+body.page-research a:not(ol a):not(.site-title-link):visited,
+body.page-research a:not(ol a):not(.site-title-link):active,
+body.page-research a:not(ol a):not(.site-title-link):focus {
   color: #2C4373;
   border-bottom-color: rgba(44, 67, 115, 0.3);
 }
 
-body.page-research a:not(.author):not(.site-title-link):hover {
-  color: #C9962E;
-  border-bottom-color: #C9962E;
-  box-shadow: none;
+body.page-research ol a:not(.author),
+body.page-research ol a:not(.author):link,
+body.page-research ol a:not(.author):visited,
+body.page-research ol a:not(.author):active,
+body.page-research ol a:not(.author):focus {
+  color: inherit;
+  border-bottom: none;
 }
 
 body.page-research a.author,
@@ -86,13 +89,7 @@ body.page-research a.author:visited,
 body.page-research a.author:active,
 body.page-research a.author:focus {
   color: inherit;
-  border-bottom-color: currentColor;
-}
-
-body.page-research a.author:hover {
-  color: inherit;
-  border-bottom-color: currentColor;
-  box-shadow: none;
+  border-bottom: none;
 }
 
 [data-theme="dark"] body.page-research {
@@ -103,19 +100,13 @@ body.page-research a.author:hover {
   --border-color: rgba(225, 230, 238, 0.1);
 }
 
-[data-theme="dark"] body.page-research a:not(.author):not(.site-title-link),
-[data-theme="dark"] body.page-research a:not(.author):not(.site-title-link):link,
-[data-theme="dark"] body.page-research a:not(.author):not(.site-title-link):visited,
-[data-theme="dark"] body.page-research a:not(.author):not(.site-title-link):active,
-[data-theme="dark"] body.page-research a:not(.author):not(.site-title-link):focus {
+[data-theme="dark"] body.page-research a:not(ol a):not(.site-title-link),
+[data-theme="dark"] body.page-research a:not(ol a):not(.site-title-link):link,
+[data-theme="dark"] body.page-research a:not(ol a):not(.site-title-link):visited,
+[data-theme="dark"] body.page-research a:not(ol a):not(.site-title-link):active,
+[data-theme="dark"] body.page-research a:not(ol a):not(.site-title-link):focus {
   color: #9eb4d9;
   border-bottom-color: rgba(158, 180, 217, 0.3);
-}
-
-[data-theme="dark"] body.page-research a:not(.author):not(.site-title-link):hover {
-  color: #e8b541;
-  border-bottom-color: #e8b541;
-  box-shadow: none;
 }
 
 [data-theme="dark"] body.page-research a.author,
@@ -124,13 +115,7 @@ body.page-research a.author:hover {
 [data-theme="dark"] body.page-research a.author:active,
 [data-theme="dark"] body.page-research a.author:focus {
   color: inherit;
-  border-bottom-color: currentColor;
-}
-
-[data-theme="dark"] body.page-research a.author:hover {
-  color: inherit;
-  border-bottom-color: currentColor;
-  box-shadow: none;
+  border-bottom: none;
 }
 
 /* ---------------------------------------------------------- */
@@ -288,7 +273,6 @@ a:visited {
   color: #3D3147;
   text-decoration: none;
   border-bottom: 2px solid rgba(61, 49, 71, 0.3);
-  transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 [data-theme="dark"] a,
@@ -298,16 +282,6 @@ a:visited {
 [data-theme="dark"] a:visited {
   color: #ebe4d6;
   border-bottom-color: rgba(235, 228, 214, 0.3);
-}
-
-a:hover {
-  color: #8C6A3F;
-  border-bottom-color: #8C6A3F;
-}
-
-[data-theme="dark"] a:hover {
-  color: #c9a063;
-  border-bottom-color: #c9a063;
 }
 
 /* ---------------------------------------------------------- */
@@ -704,16 +678,6 @@ a:has(> em.american) {
   border-bottom: none;
 }
 
-a:has(> em.harvard):hover,
-a:has(> em.princeton):hover,
-a:has(> em.american):hover {
-  border-bottom: none;
-  background: none;
-  box-shadow: none;
-  padding: 0;
-  margin: 0;
-}
-
 /* ---------------------------------------------------------- */
 /* Author Name Links                                          */
 /* ---------------------------------------------------------- */
@@ -724,12 +688,7 @@ a.author:visited,
 a.author:active,
 a.author:focus {
   color: inherit;
-  border-bottom-color: currentColor;
-}
-
-a.author:hover {
-  color: inherit;
-  border-bottom-color: currentColor;
+  border-bottom: none;
 }
 
 [data-theme="dark"] a.author,
@@ -738,12 +697,7 @@ a.author:hover {
 [data-theme="dark"] a.author:active,
 [data-theme="dark"] a.author:focus {
   color: inherit;
-  border-bottom-color: currentColor;
-}
-
-[data-theme="dark"] a.author:hover {
-  color: inherit;
-  border-bottom-color: currentColor;
+  border-bottom: none;
 }
 
 /* ---------------------------------------------------------- */
