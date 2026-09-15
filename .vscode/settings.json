@@ -1,0 +1,10 @@
+{
+  // Render the compiled PDF inside a VS Code tab (built-in preview can't open PDFs)
+  "latex-workshop.view.pdf.viewer": "tab",
+  // Build manually with the ▶ button / Cmd+Alt+B instead of on every save
+  "latex-workshop.latex.autoBuild.run": "never",
+  // Keep the .pdf and .synctex.gz, delete .aux/.log/.out/.fls/.fdb_latexmk after each build
+  "latex-workshop.latex.autoClean.run": "onBuilt",
+  // The CV uses ABC Areal via fontspec, which needs XeLaTeX
+  "latex-workshop.latex.recipe.default": "latexmk (xelatex)"
+}
