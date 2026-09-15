@@ -118,6 +118,85 @@ body.page-research a.author:focus {
   border-bottom: none;
 }
 
+/* Teaching page — Evergreen & Clay */
+body.page-teaching {
+  --border-color: rgba(47, 93, 80, 0.14);
+  --shadow-color: rgba(47, 93, 80, 0.08);
+  --accent-primary: #2F5D50;
+  --accent-secondary: #B4622F;
+  --accent-glow: rgba(47, 93, 80, 0.3);
+  --teach-accent: #2F5D50;
+}
+
+[data-theme="dark"] body.page-teaching {
+  --border-color: rgba(227, 233, 228, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --accent-primary: #e3e9e4;
+  --accent-secondary: #d98a5a;
+  --accent-glow: rgba(227, 233, 228, 0.15);
+  --teach-accent: #8fc1ad;
+}
+
+.teaching-label {
+  margin: -12px 0 14px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.course-list {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.course {
+  padding: 16px 20px;
+}
+
+.course-code {
+  display: inline-block;
+  margin-bottom: 6px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--teach-accent);
+  background: color-mix(in srgb, var(--teach-accent) 12%, transparent);
+}
+
+.course-title {
+  margin: 0 0 4px;
+  font-size: 1.05rem;
+}
+
+.course-desc {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+}
+
+.course-terms {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.course-terms li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0;
+  padding: 6px 0;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.9rem;
+}
+
+.course-terms li span:last-child {
+  color: var(--text-muted);
+  text-align: right;
+  white-space: nowrap;
+}
+
 /* ---------------------------------------------------------- */
 /* Base & Reset                                               */
 /* ---------------------------------------------------------- */
