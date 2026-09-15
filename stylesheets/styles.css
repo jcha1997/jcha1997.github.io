@@ -218,6 +218,14 @@ body.page-teaching {
 /* Base & Reset                                               */
 /* ---------------------------------------------------------- */
 
+@font-face {
+  font-family: 'ABC Areal';
+  src: url('../fonts/ABCArealVariable.woff2') format('woff2');
+  font-weight: 400 700;
+  font-style: oblique 0deg 12deg;
+  font-display: swap;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -229,7 +237,7 @@ html {
 body {
   background: var(--bg-primary);
   padding: 50px;
-  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'ABC Areal', -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--text-secondary);
   font-weight: 350;
   line-height: 1.6;
@@ -237,6 +245,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   transition: background-color var(--transition-base), color var(--transition-base);
   min-height: 100vh;
+}
+
+/* Areal's dark-mode axis compensates for light-on-dark bleed */
+[data-theme="dark"] body {
+  font-variation-settings: "DRKM" 1;
 }
 
 
@@ -313,7 +326,7 @@ body {
 /* ---------------------------------------------------------- */
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'ABC Areal', -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--text-primary);
   margin: 0 0 20px;
   font-weight: 500;
@@ -432,7 +445,7 @@ a:visited {
 .site-title-link:visited,
 .site-title-link:active,
 .site-title-link:focus {
-  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'ABC Areal', -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 500;
   text-decoration: none;
   color: var(--text-primary);

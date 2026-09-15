@@ -1,5 +1,8 @@
 .DS_Store
 
+# Licensed Dinamo fonts (terms forbid public repositories); the site font is added at deploy
+fonts/
+
 # LaTeX build artifacts (keep the .pdf, drop the rest)
 *.aux
 *.log

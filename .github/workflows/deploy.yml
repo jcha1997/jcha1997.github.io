@@ -1,0 +1,47 @@
+name: Deploy site
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          path: _site
+          persist-credentials: false
+
+      # Licensed font lives in a private repo so it never enters this public one
+      - uses: actions/checkout@v7
+        with:
+          repository: jcha1997/site-fonts
+          token: ${{ secrets.FONTS_TOKEN }}
+          path: site-fonts
+          persist-credentials: false
+
+      - run: mkdir -p _site/fonts && cp site-fonts/ABCArealVariable.woff2 _site/fonts/
+
+      - uses: actions/upload-pages-artifact@v5
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

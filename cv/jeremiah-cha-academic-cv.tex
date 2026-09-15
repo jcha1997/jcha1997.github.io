@@ -1,12 +1,22 @@
+% !TEX TS-program = xelatex
 % Academic CV - Clean single-column template
 \documentclass[11pt, letterpaper]{article}
 
 % Page geometry
 \usepackage[margin=1in]{geometry}
+\setlength{\emergencystretch}{1em}
 
-% Fonts - modern sans-serif
-\usepackage[default]{sourcesanspro}
-\usepackage[T1]{fontenc}
+% Fonts - ABC Areal by Dinamo; compile with XeLaTeX. fonts/ is gitignored (license forbids public repos)
+\usepackage{fontspec}
+\setmainfont{ABCAreal}[
+    Path = fonts/,
+    Extension = .ttf,
+    UprightFont = *-Regular,
+    ItalicFont = *-RegularItalic,
+    BoldFont = *-Bold,
+    BoldItalicFont = *-BoldItalic
+]
+\setmonofont{ABCArealMono-Regular.ttf}[Path = fonts/]
 
 % Packages
 \usepackage[hidelinks]{hyperref}
@@ -30,10 +40,10 @@
 
 % Section formatting
 \titleformat{\section}
-    {\large\bfseries\scshape\color{black}}
+    {\normalsize\bfseries\addfontfeatures{LetterSpace=6}\color{black}}
     {}
     {0em}
-    {}
+    {\MakeUppercase}
     [\titlerule]
 \titlespacing*{\section}{0pt}{2ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
@@ -105,7 +115,7 @@
 \section{Data}
 
 \begin{etaremune}
-    \item Cha, Jeremiah, Shiro Kuriwaki, and James M. Snyder, Jr. (2025). ``Candidates in American General Elections.'' Harvard Dataverse. \textsc{doi}: \href{https://doi.org/10.7910/DVN/DGDRDT}{\texttt{10.7910/DVN/DGDRDT}}.
+    \item Cha, Jeremiah, Shiro Kuriwaki, and James M. Snyder, Jr. (2025). ``Candidates in American General Elections.'' Harvard Dataverse. DOI: \href{https://doi.org/10.7910/DVN/DGDRDT}{\texttt{10.7910/DVN/DGDRDT}}.
 \end{etaremune}
 
 \section{Non-Refereed Publications}
@@ -186,7 +196,7 @@ Rules and Election Officer, Harvard Government GSA \hfill 2021--2023
 
 \section{Skills}
 
-\noindent\textbf{Technical:} R, Python, Stata, SPSS, \LaTeX, HTML\\
+\noindent\textbf{Technical:} R, Python, Stata, SPSS, LaTeX, HTML\\
 \textbf{Language:} English (Native), Korean (Limited Working)
 
 \vfill
