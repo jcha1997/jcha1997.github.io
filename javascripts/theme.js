@@ -101,14 +101,4 @@
     observer.observe(el);
   });
 
-  // ============================================
-  // Page load fade-in
-  // ============================================
-
-  window.addEventListener('load', () => {
-    document.querySelectorAll('.animate-fade-in').forEach(el => {
-      el.classList.add('loaded');
-    });
-  });
-
 })();

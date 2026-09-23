@@ -476,6 +476,17 @@ a:visited {
 }
 
 
+/* Korean name: ABC Areal carries no Hangul, so name the fallback explicitly */
+.site-name-ko {
+  display: block;
+  margin-top: 3px;
+  font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Nanum Gothic', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
 /* Profile Photo */
 .profile-photo {
   display: block;
@@ -510,6 +521,11 @@ a:visited {
   padding: 0;
   background: none;
   border-bottom: none;
+  /* Centres the icon box itself, so the inline icon font and the inline
+     SVG below sit on the same optical line instead of the SVG riding high */
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
 }
 
 .social-links a:hover {
@@ -538,6 +554,26 @@ a:visited {
 }
 
 [data-theme="dark"] .social-links a:hover i {
+  color: #e8e6e1;
+}
+
+/* Google Scholar has no Font Awesome glyph and Academicons costs a whole
+   render-blocking stylesheet for one icon, so it is inline SVG. Sized in em
+   so it tracks the row's font-size the way the icon font does. */
+.social-links a svg {
+  display: block;
+  width: 0.85em;
+  height: 0.85em;
+  color: var(--text-primary);
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.social-links a:hover svg {
+  transform: scale(1.2);
+  color: var(--accent-primary);
+}
+
+[data-theme="dark"] .social-links a:hover svg {
   color: #e8e6e1;
 }
 
@@ -728,16 +764,16 @@ footer {
 /* Animations (minimal)                                       */
 /* ---------------------------------------------------------- */
 
-/* Fade-in on page load — starts hidden, revealed by JS after load */
+/* Fade-in on first paint. Pure CSS: the page must never need JS to become
+   visible. Where view transitions run, they cover this instead. */
 .animate-fade-in {
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  animation: page-in 500ms ease both;
 }
 
-.animate-fade-in.loaded {
-  opacity: 1;
-  transform: translateY(0);
+@supports (view-transition-name: none) {
+  .animate-fade-in {
+    animation: none;
+  }
 }
 
 /* ---------------------------------------------------------- */
@@ -914,4 +950,87 @@ a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--accent-primary);
   outline-offset: 2px;
+}
+
+/* ---------------------------------------------------------- */
+/* Page Transitions                                           */
+/* ---------------------------------------------------------- */
+
+/* Cross-document view transitions. The browser crossfades between pages by
+   itself: no JS, no router, links stay ordinary links. Back/forward,
+   cmd-click and open-in-new-tab are untouched, and browsers without support
+   navigate instantly as before. */
+@view-transition {
+  navigation: auto;
+}
+
+/* Naming the chrome holds it still across the navigation, so only the
+   content area moves and the nav reads as tabs rather than a page reload. */
+.site-header  { view-transition-name: site-header; }
+.topnav       { view-transition-name: topnav; }
+.theme-toggle { view-transition-name: theme-toggle; }
+
+@keyframes page-out {
+  to { opacity: 0; }
+}
+
+@keyframes page-in {
+  from { opacity: 0; transform: translateY(8px); }
+}
+
+/* Kept short on purpose: a navigation that starts while a transition is
+   still running is skipped by the browser, so a brief transition is one
+   that survives fast clicking through the tabs. A transition is not over
+   until its LONGEST animation ends, so the group is pinned to match the
+   crossfade -- left alone it runs the 250ms UA default and silently
+   stretches the window in which the next click gets dropped. */
+::view-transition-group(root) {
+  animation-duration: 180ms;
+}
+
+::view-transition-old(root) {
+  animation: page-out 90ms ease-in both;
+}
+
+::view-transition-new(root) {
+  animation: page-in 180ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+/* The chrome is identical on every page, so there is nothing to animate.
+   Crossfading it paints the outgoing copy over the incoming one, which
+   briefly lights two tabs at once -- the flicker you see when clicking
+   quickly. Swapping it instantly also ends the transition sooner. */
+::view-transition-group(site-header),
+::view-transition-group(topnav),
+::view-transition-group(theme-toggle),
+::view-transition-image-pair(site-header),
+::view-transition-image-pair(topnav),
+::view-transition-image-pair(theme-toggle) {
+  animation: none;
+}
+
+::view-transition-old(site-header),
+::view-transition-old(topnav),
+::view-transition-old(theme-toggle) {
+  animation: none;
+  opacity: 0;
+}
+
+::view-transition-new(site-header),
+::view-transition-new(topnav),
+::view-transition-new(theme-toggle) {
+  animation: none;
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+
+  .animate-fade-in {
+    animation: none;
+  }
 }
