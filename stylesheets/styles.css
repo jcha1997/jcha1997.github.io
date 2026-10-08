@@ -761,6 +761,65 @@ footer {
 }
 
 /* ---------------------------------------------------------- */
+/* News Ledger (home page)                                    */
+/* ---------------------------------------------------------- */
+
+.news-heading {
+  margin: 32px 0 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.news-list {
+  margin: 0 0 24px;
+}
+
+.news-item {
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  gap: 14px;
+  padding: 9px 0;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.95rem;
+}
+
+.news-item dt {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  padding-top: 2px;
+}
+
+.news-item dd {
+  margin: 0;
+}
+
+.news-tag {
+  display: inline-block;
+  margin-right: 4px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  vertical-align: 1px;
+  color: var(--accent-primary);
+  background: color-mix(in srgb, var(--accent-primary) 12%, transparent);
+}
+
+@media screen and (max-width: 480px) {
+  .news-item {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
+
+/* ---------------------------------------------------------- */
 /* Animations (minimal)                                       */
 /* ---------------------------------------------------------- */
 
