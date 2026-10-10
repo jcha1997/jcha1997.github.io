@@ -118,6 +118,35 @@ body.page-research a.author:focus {
   border-bottom: none;
 }
 
+/* Research link tags — square catalog tabs with a mustard spine */
+.pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+body.page-research ol a.pub-link:is(*, :link, :visited, :active, :focus) {
+  display: inline-block;
+  padding: 3px 9px 2px 8px;
+  font-size: 10.5px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #2C4373;
+  border: 1px solid rgba(44, 67, 115, 0.35);
+  border-left: 3px solid #C9962E;
+  border-radius: 0;
+  background: transparent;
+}
+
+[data-theme="dark"] body.page-research ol a.pub-link:is(*, :link, :visited, :active, :focus) {
+  color: #9eb4d9;
+  border-color: rgba(158, 180, 217, 0.35);
+  border-left-color: #e8b541;
+}
+
 /* CV page — Oxblood & Brass */
 body.page-cv {
   --border-color: rgba(123, 45, 59, 0.14);
@@ -800,16 +829,17 @@ footer {
 
 .news-tag {
   display: inline-block;
-  margin-right: 4px;
-  padding: 1px 8px;
-  border-radius: 999px;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  margin-right: 6px;
+  padding: 2px 8px 1px 7px;
+  font-size: 10.5px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
-  vertical-align: 1px;
+  vertical-align: 2px;
   color: var(--accent-primary);
-  background: color-mix(in srgb, var(--accent-primary) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-primary) 35%, transparent);
+  border-left: 3px solid var(--accent-secondary);
 }
 
 @media screen and (max-width: 480px) {
