@@ -870,27 +870,42 @@ footer {
 /* ---------------------------------------------------------- */
 
 em.race,
+em.representation,
 em.governance,
 em.housing,
 em.methods,
 em.fun {
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--pill-color);
   letter-spacing: 0.01em;
+  padding: 0.05em 0.4em;
+  border-radius: 0.35em;
+  background: color-mix(in srgb, var(--pill-color) 11%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--pill-color) 22%, transparent);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  white-space: nowrap;
 }
 
-em.race      { --pill-color: #B07020; }   /* manuscript gold */
-em.governance{ --pill-color: #5E3D70; }   /* iris purple */
-em.housing   { --pill-color: #1F4A7A; }   /* ink blue */
-em.methods   { --pill-color: #A24E2E; }   /* terracotta */
-em.fun       { --pill-color: #2F6B47; }   /* forest */
+em.race          { --pill-color: #B5650D; }   /* burnt amber */
+em.representation{ --pill-color: #A3324A; }   /* garnet */
+em.governance    { --pill-color: #6A3D8F; }   /* iris purple */
+em.housing       { --pill-color: #1D5A9C; }   /* cobalt */
+em.methods       { --pill-color: #B4482A; }   /* terracotta */
+em.fun           { --pill-color: #2B7A4B; }   /* forest */
 
-[data-theme="dark"] em.race      { --pill-color: #e0a93f; }
-[data-theme="dark"] em.governance{ --pill-color: #bc94d4; }
-[data-theme="dark"] em.housing   { --pill-color: #6f9ed1; }
-[data-theme="dark"] em.methods   { --pill-color: #d97a55; }
-[data-theme="dark"] em.fun       { --pill-color: #6db18a; }
+[data-theme="dark"] em.race          { --pill-color: #f0b04a; }
+[data-theme="dark"] em.representation{ --pill-color: #f08aa0; }
+[data-theme="dark"] em.governance    { --pill-color: #c9a2e6; }
+[data-theme="dark"] em.housing       { --pill-color: #7fb2ea; }
+[data-theme="dark"] em.methods       { --pill-color: #ee8c66; }
+[data-theme="dark"] em.fun           { --pill-color: #7cc79b; }
+
+[data-theme="dark"] :is(em.race, em.representation, em.governance, em.housing, em.methods, em.fun) {
+  background: color-mix(in srgb, var(--pill-color) 16%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--pill-color) 28%, transparent);
+}
 
 em.harvard,
 em.princeton,
