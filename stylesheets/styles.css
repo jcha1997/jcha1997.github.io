@@ -526,10 +526,16 @@ a:visited {
 }
 
 .tagline {
-  margin: 8px 0 14px 0;
+  margin: 8px 0 6px 0;
   font-size: 0.95rem;
   color: var(--text-muted);
   line-height: 1.4;
+}
+
+.profile-email {
+  margin: 0 0 14px 0;
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
 }
 
 /* ---------------------------------------------------------- */
