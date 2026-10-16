@@ -538,6 +538,25 @@ a:visited {
   overflow-wrap: anywhere;
 }
 
+/* Keep the profile card identical across pages, regardless of page palettes */
+.profile-card {
+  --text-muted: #7a6f63;
+}
+
+[data-theme="dark"] .profile-card {
+  --text-muted: #968d7e;
+}
+
+.site-header .profile-card .profile-email a:is(*, :link, :visited, :active, :focus) {
+  color: #3D3147;
+  border-bottom-color: rgba(61, 49, 71, 0.3);
+}
+
+[data-theme="dark"] .site-header .profile-card .profile-email a:is(*, :link, :visited, :active, :focus) {
+  color: #ebe4d6;
+  border-bottom-color: rgba(235, 228, 214, 0.3);
+}
+
 /* ---------------------------------------------------------- */
 /* Social Links                                               */
 /* ---------------------------------------------------------- */
@@ -885,13 +904,6 @@ em.fun {
   font-weight: 600;
   color: var(--pill-color);
   letter-spacing: 0.01em;
-  padding: 0.05em 0.4em;
-  border-radius: 0.35em;
-  background: color-mix(in srgb, var(--pill-color) 11%, transparent);
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--pill-color) 22%, transparent);
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-  white-space: nowrap;
 }
 
 em.race          { --pill-color: #B5650D; }   /* burnt amber */
@@ -907,11 +919,6 @@ em.fun           { --pill-color: #2B7A4B; }   /* forest */
 [data-theme="dark"] em.housing       { --pill-color: #7fb2ea; }
 [data-theme="dark"] em.methods       { --pill-color: #ee8c66; }
 [data-theme="dark"] em.fun           { --pill-color: #7cc79b; }
-
-[data-theme="dark"] :is(em.race, em.representation, em.governance, em.housing, em.methods, em.fun) {
-  background: color-mix(in srgb, var(--pill-color) 16%, transparent);
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--pill-color) 28%, transparent);
-}
 
 em.harvard,
 em.princeton,
