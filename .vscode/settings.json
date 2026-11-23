@@ -6,5 +6,6 @@
   // Keep the .pdf and .synctex.gz, delete .aux/.log/.out/.fls/.fdb_latexmk after each build
   "latex-workshop.latex.autoClean.run": "onBuilt",
   // The CV uses ABC Areal via fontspec, which needs XeLaTeX
-  "latex-workshop.latex.recipe.default": "latexmk (xelatex)"
+  "latex-workshop.latex.recipe.default": "latexmk (xelatex)",
+  "r.lsp.promptToInstall": false
 }
