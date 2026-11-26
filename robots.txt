@@ -41,3 +41,5 @@ Disallow: /cv/*.tex
 Disallow: /cv/*.cls
 Disallow: /cv/*.synctex.gz
 Disallow: /.github/
+
+Sitemap: https://www.jeremiahcha.com/sitemap.xml
